@@ -6,16 +6,6 @@ provider "vsphere" {
   allow_unverified_ssl  = true
 }
 
-provider "aws" {
-  access_key          = "${var.access_key}"
-  secret_key          = "${var.secret_key}"
-  allowed_account_ids = ["${var.first_account_id}"]
-  region              = "${var.region}"
-  #version             = ">= 3.0"
-}
-variable "access_key" {}
-variable "secret_key" {}
-
 data "vsphere_datacenter" "dc" {
   name                      = var.data_center
 }
